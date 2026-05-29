@@ -1,0 +1,62 @@
+:root {
+    --doc-section-border: rgba(255, 255, 255, 0.12);
+    --doc-section-bg: rgba(255, 255, 255, 0.03);
+}
+
+.md-typeset .doc-section {
+    margin: 1.5rem 0;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--doc-section-border);
+    border-radius: 1rem;
+    background: var(--doc-section-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset .doc-section > h2:first-child {
+    margin-top: 0;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .doc-section--goal {
+    border-left: 0.35rem solid var(--md-primary-fg-color);
+}
+
+.md-typeset .doc-section--terms {
+    border-left: 0.35rem solid #0ea5e9;
+}
+
+.md-typeset .doc-section--practice {
+    border-left: 0.35rem solid #22c55e;
+}
+
+.md-typeset .doc-section--source {
+    border-left: 0.35rem solid #f59e0b;
+}
+
+.md-typeset .doc-section--summary {
+    border-left: 0.35rem solid #a855f7;
+}
+
+.md-typeset .doc-section--quiz {
+    border-left: 0.35rem solid #ef4444;
+}
+
+.md-typeset .doc-section--next {
+    border-left: 0.35rem solid #14b8a6;
+}
+
+.md-typeset blockquote {
+    border-left: 0.25rem solid var(--md-primary-fg-color);
+    background: rgba(127, 127, 127, 0.06);
+    border-radius: 0.75rem;
+    padding: 0.2rem 1rem;
+}
+
+.md-typeset table {
+    font-size: 0.92rem;
+}
+
+.md-typeset code {
+    font-size: 0.92em;
+}

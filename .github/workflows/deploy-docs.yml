@@ -41,7 +41,7 @@ jobs:
         run: python scripts/prepare_mkdocs.py
 
       - name: 构建站点
-        run: mkdocs build
+        run: mkdocs build -f .mkdocs.generated.yml
 
       - name: 上传 Pages 构建产物
         uses: actions/upload-pages-artifact@v3

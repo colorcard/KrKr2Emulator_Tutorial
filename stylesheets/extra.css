@@ -1,6 +1,58 @@
 :root {
     --doc-section-border: rgba(255, 255, 255, 0.12);
     --doc-section-bg: rgba(255, 255, 255, 0.03);
+    --doc-font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    --doc-font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular",
+        Consolas, "Liberation Mono", monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--doc-font-sans);
+}
+
+.md-main__inner {
+    max-width: 76rem;
+}
+
+.md-typeset {
+    font-size: 0.98rem;
+    line-height: 1.78;
+    letter-spacing: 0.01em;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.md-typeset h1 {
+    margin: 1.1rem 0 1rem;
+}
+
+.md-typeset h2 {
+    margin-top: 1.8rem;
+}
+
+.md-typeset h3 {
+    margin-top: 1.4rem;
+}
+
+.md-typeset pre,
+.md-typeset code,
+.md-typeset kbd {
+    font-family: var(--doc-font-mono);
 }
 
 .md-typeset .doc-section {
@@ -54,7 +106,13 @@
 }
 
 .md-typeset table {
-    font-size: 0.92rem;
+    font-size: 0.94rem;
+    border-radius: 0.9rem;
+    overflow: hidden;
+}
+
+.md-typeset pre {
+    border-radius: 0.9rem;
 }
 
 .md-typeset code {

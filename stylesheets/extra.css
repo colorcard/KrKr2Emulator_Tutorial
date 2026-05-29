@@ -89,6 +89,210 @@ body {
     font-family: var(--vp-font-family-mono);
 }
 
+.VPHome {
+    position: relative;
+}
+
+.VPHome .VPHero {
+    padding-top: 1.5rem;
+}
+
+.VPHome .name {
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+}
+
+.VPHome .text {
+    max-width: 14em;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.05em;
+}
+
+.VPHome .tagline {
+    max-width: 42rem;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--vp-c-text-2);
+}
+
+.VPHome .actions {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.home-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.4rem 0 2rem;
+}
+
+.home-metric,
+.home-panel,
+.home-route-block,
+.home-module-card {
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 250, 252, 0.82));
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(10px);
+}
+
+.home-metric {
+    border-radius: 1rem;
+    padding: 1rem 1.1rem;
+}
+
+.home-metric strong {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1.1;
+    color: var(--vp-c-brand-1);
+}
+
+.home-metric span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--vp-c-text-2);
+    font-size: 0.92rem;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.home-panel {
+    display: block;
+    border-radius: 1.15rem;
+    padding: 1.15rem 1.2rem;
+    text-decoration: none;
+    color: inherit;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.home-panel:hover {
+    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.28);
+    box-shadow: 0 20px 42px rgba(15, 23, 42, 0.1);
+}
+
+.home-panel h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.08rem;
+}
+
+.home-panel p {
+    margin: 0;
+    color: var(--vp-c-text-2);
+    line-height: 1.8;
+}
+
+.home-panel--accent {
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(59, 130, 246, 0.06)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.86));
+    border-color: rgba(37, 99, 235, 0.22);
+}
+
+.home-module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.95rem;
+    margin: 1rem 0 2rem;
+}
+
+.home-module-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border-radius: 1.05rem;
+    padding: 1rem 1.05rem 1.1rem;
+    text-decoration: none;
+    color: inherit;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.home-module-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.28);
+    box-shadow: 0 20px 42px rgba(15, 23, 42, 0.1);
+}
+
+.home-module-code {
+    align-self: flex-start;
+    padding: 0.16rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--vp-c-brand-1);
+    font-family: var(--vp-font-family-mono);
+    font-size: 0.8rem;
+}
+
+.home-module-card strong {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.home-module-card em {
+    font-style: normal;
+    color: var(--vp-c-text-2);
+    font-size: 0.9rem;
+}
+
+.home-route-block {
+    border-radius: 1.1rem;
+    padding: 1rem 1.1rem;
+    margin: 1rem 0;
+}
+
+.home-route-title {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--vp-c-brand-1);
+}
+
+.home-route {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.home-route span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.1rem;
+    padding: 0 0.8rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--vp-c-text-1);
+    font-family: var(--vp-font-family-mono);
+    font-size: 0.88rem;
+}
+
+.home-route i {
+    color: var(--vp-c-text-3);
+    font-style: normal;
+    user-select: none;
+}
+
+@media (max-width: 960px) {
+    .home-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 .vp-doc .doc-section {
     margin: 1.4rem 0;
     padding: 1.1rem 1.25rem;
@@ -133,6 +337,18 @@ body {
 @media (max-width: 768px) {
     .vp-doc {
         font-size: 15px;
+    }
+
+    .VPHome .text {
+        max-width: none;
+    }
+
+    .VPHome .tagline {
+        font-size: 0.96rem;
+    }
+
+    .home-metrics {
+        grid-template-columns: 1fr;
     }
 
     .vp-doc .doc-section {

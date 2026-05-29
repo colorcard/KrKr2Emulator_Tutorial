@@ -1,120 +1,141 @@
 :root {
-    --doc-section-border: rgba(255, 255, 255, 0.12);
-    --doc-section-bg: rgba(255, 255, 255, 0.03);
-    --doc-font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    --vp-font-family-base: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
         "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-    --doc-font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular",
+    --vp-font-family-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular",
         Consolas, "Liberation Mono", monospace;
+    --vp-c-brand-1: #2563eb;
+    --vp-c-brand-2: #1d4ed8;
+    --vp-c-brand-3: #1e40af;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body,
-button,
-input,
-select,
-textarea {
-    font-family: var(--doc-font-sans);
+body {
+    font-family: var(--vp-font-family-base);
+    background:
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 240px);
 }
 
-.md-main__inner {
-    max-width: 76rem;
+.VPNavBarTitle,
+.VPNavBarMenu,
+.VPDoc,
+.VPHero,
+.VPHomeFeatures {
+    font-family: var(--vp-font-family-base);
 }
 
-.md-typeset {
-    font-size: 0.98rem;
-    line-height: 1.78;
+.VPContent {
+    max-width: 1440px;
+}
+
+.vp-doc {
+    font-size: 16px;
+    line-height: 1.8;
     letter-spacing: 0.01em;
 }
 
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-typeset h4 {
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
     font-weight: 700;
     letter-spacing: -0.01em;
 }
 
-.md-typeset h1 {
-    margin: 1.1rem 0 1rem;
+.vp-doc h1 {
+    margin-top: 0.8rem;
 }
 
-.md-typeset h2 {
+.vp-doc h2 {
     margin-top: 1.8rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--vp-c-divider);
 }
 
-.md-typeset h3 {
+.vp-doc h3 {
     margin-top: 1.4rem;
 }
 
-.md-typeset pre,
-.md-typeset code,
-.md-typeset kbd {
-    font-family: var(--doc-font-mono);
-}
-
-.md-typeset .doc-section {
-    margin: 1.5rem 0;
-    padding: 1.1rem 1.25rem;
-    border: 1px solid var(--doc-section-border);
-    border-radius: 1rem;
-    background: var(--doc-section-bg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.md-typeset .doc-section > h2:first-child {
-    margin-top: 0;
-    padding-bottom: 0.35rem;
-    border-bottom: 1px solid var(--md-default-fg-color--lightest);
-}
-
-.md-typeset .doc-section--goal {
-    border-left: 0.35rem solid var(--md-primary-fg-color);
-}
-
-.md-typeset .doc-section--terms {
-    border-left: 0.35rem solid #0ea5e9;
-}
-
-.md-typeset .doc-section--practice {
-    border-left: 0.35rem solid #22c55e;
-}
-
-.md-typeset .doc-section--source {
-    border-left: 0.35rem solid #f59e0b;
-}
-
-.md-typeset .doc-section--summary {
-    border-left: 0.35rem solid #a855f7;
-}
-
-.md-typeset .doc-section--quiz {
-    border-left: 0.35rem solid #ef4444;
-}
-
-.md-typeset .doc-section--next {
-    border-left: 0.35rem solid #14b8a6;
-}
-
-.md-typeset blockquote {
-    border-left: 0.25rem solid var(--md-primary-fg-color);
+.vp-doc blockquote {
+    border-left: 0.3rem solid var(--vp-c-brand-1);
     background: rgba(127, 127, 127, 0.06);
-    border-radius: 0.75rem;
-    padding: 0.2rem 1rem;
-}
-
-.md-typeset table {
-    font-size: 0.94rem;
     border-radius: 0.9rem;
-    overflow: hidden;
+    padding: 0.35rem 1rem;
 }
 
-.md-typeset pre {
+.vp-doc table {
+    display: block;
+    overflow-x: auto;
+    font-size: 0.95rem;
     border-radius: 0.9rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
 }
 
-.md-typeset code {
-    font-size: 0.92em;
+.vp-doc th,
+.vp-doc td {
+    white-space: nowrap;
+}
+
+.vp-doc pre {
+    border-radius: 0.95rem;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.vp-doc code,
+.vp-doc kbd {
+    font-family: var(--vp-font-family-mono);
+}
+
+.vp-doc .doc-section {
+    margin: 1.4rem 0;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+.vp-doc .doc-section > h2:first-child {
+    margin-top: 0;
+}
+
+.vp-doc .doc-section--goal {
+    border-left: 0.36rem solid var(--vp-c-brand-1);
+}
+
+.vp-doc .doc-section--terms {
+    border-left: 0.36rem solid #0ea5e9;
+}
+
+.vp-doc .doc-section--practice {
+    border-left: 0.36rem solid #22c55e;
+}
+
+.vp-doc .doc-section--source {
+    border-left: 0.36rem solid #f59e0b;
+}
+
+.vp-doc .doc-section--summary {
+    border-left: 0.36rem solid #a855f7;
+}
+
+.vp-doc .doc-section--quiz {
+    border-left: 0.36rem solid #ef4444;
+}
+
+.vp-doc .doc-section--next {
+    border-left: 0.36rem solid #14b8a6;
+}
+
+@media (max-width: 768px) {
+    .vp-doc {
+        font-size: 15px;
+    }
+
+    .vp-doc .doc-section {
+        padding: 0.95rem 1rem;
+    }
 }

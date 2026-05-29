@@ -12,6 +12,7 @@
 - 站点基于 `VitePress`，部署流程位于 `.github/workflows/deploy-docs.yml`。
 - 站点导航由 `scripts/prepare_mkdocs.py` 生成，已统一为 `P` 系列在前、`M` 系列在后，并调整了中文字体与正文排版。
 - 首页参考本 README 的信息结构重做为“首屏 + 卡片 + 路线 + 模块墙”的入口页，方便直接进入对应模块。
+- 自定义短域名 `https://krkr.colorcard.cc/` 对应根路径部署，站点生成时会自动切到 `base: /`。
 
 ## 文档规划
 

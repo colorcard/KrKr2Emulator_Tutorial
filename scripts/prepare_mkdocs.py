@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 from html import escape as html_escape
 import re
 import shutil
@@ -400,6 +401,11 @@ def write_vitepress_config() -> None:
     theme_dir = vitepress_dir / "theme"
     theme_dir.mkdir(parents=True, exist_ok=True)
 
+    if (ROOT / "CNAME").exists():
+        vitepress_base = "/"
+    else:
+        vitepress_base = os.environ.get("VITEPRESS_BASE", "/")
+
     nav_json = json.dumps(build_nav(), ensure_ascii=False, indent=2)
     sidebar_json = json.dumps(build_sidebar(), ensure_ascii=False, indent=2)
     config = f"""import {{ defineConfig }} from 'vitepress'
@@ -411,7 +417,7 @@ export default defineConfig({{
   lang: 'zh-CN',
   title: 'KrKr2 教程文档',
   description: 'KrKr2 模拟器的中文教程与项目文档站点。',
-  base: process.env.VITEPRESS_BASE ?? '/',
+  base: {json.dumps(vitepress_base)},
   cleanUrls: true,
   lastUpdated: false,
   ignoreDeadLinks: true,
@@ -536,6 +542,12 @@ def main() -> None:
         样式目标 = SOURCE / "stylesheets" / "extra.css"
         样式目标.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(样式源, 样式目标)
+
+    cname_source = ROOT / "CNAME"
+    if cname_source.exists():
+        public_dir = SOURCE / "public"
+        public_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(cname_source, public_dir / "CNAME")
 
     write_vitepress_config()
 

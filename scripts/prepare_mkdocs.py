@@ -254,25 +254,15 @@ def build_homepage_content() -> str:
             )
         return "\n".join(cards)
 
-    def render_route(items: list[tuple[str, str]]) -> str:
-        route: list[str] = []
-        for index, (title, _) in enumerate(items):
-            route.append(f"<span>{title.split(' · ', 1)[0]}</span>")
-            if index != len(items) - 1:
-                route.append("<i>→</i>")
-        return "\n".join(route)
-
     p_cards = render_module_cards(front_matter_modules, "P")
     m_cards = render_module_cards(project_modules, "M")
-    p_route = render_route(front_matter_modules)
-    m_route = render_route(project_modules)
 
     return f"""---
 layout: home
 hero:
   name: KrKr2 教程文档
   text: 面向 C++ 基础开发者的完整学习路径
-  tagline: 站点把 README 的信息结构重写成更适合进入页的“首屏 + 卡片 + 路线 + 模块墙”，并直接部署到 VitePress。
+  tagline: 站点把 README 的信息结构重写成更适合进入页的“首屏 + 卡片 + 路线 + 模块墙”。
   actions:
     - theme: brand
       text: 从 P01 开始
@@ -288,11 +278,9 @@ features:
     details: 从构建工具链、图形与音视频，到编译原理、逆向工程和现代 UI。
   - title: 13 个项目模块
     details: 按子系统拆解 KrKr2，覆盖构建、渲染、音频、视频、脚本、插件与 CI/CD。
-  - title: 在线部署
-    details: GitHub Actions 自动构建，GitHub Pages 在线预览。
 ---
 
-# 在线预览
+# 首页概览
 
 > 这里不是简单的目录页，而是把 README 中的模块索引、学习路线和项目说明重新整理成一个“先看什么、怎么学、点哪里”的入口页。
 
@@ -308,29 +296,6 @@ features:
   <div class="home-metric">
     <strong>{len(front_matter_modules) + len(project_modules)}</strong>
     <span>教程模块</span>
-  </div>
-  <div class="home-metric">
-    <strong>GitHub Pages</strong>
-    <span>自动部署</span>
-  </div>
-</div>
-
-<div class="home-grid home-grid--preview">
-  <div class="home-panel home-panel--accent">
-    <h3>站点入口</h3>
-    <p>VitePress 负责页面框架，GitHub Actions 负责构建，GitHub Pages 负责发布。</p>
-  </div>
-  <div class="home-panel">
-    <h3>阅读顺序</h3>
-    <p>P 系列先打基础，M 系列后看项目；两条线都按编号排序，避免目录跳读。</p>
-  </div>
-  <div class="home-panel">
-    <h3>首页风格</h3>
-    <p>参考 README 的信息结构，但把表格改成卡片、路线和模块墙，让入口更像产品首页。</p>
-  </div>
-  <div class="home-panel">
-    <h3>源码入口</h3>
-    <p>首页由 `scripts/prepare_mkdocs.py` 生成，样式来自 `stylesheets/extra.css`。</p>
   </div>
 </div>
 
@@ -373,12 +338,38 @@ features:
 
 <div class="home-route-block">
   <div class="home-route-title">基础路线</div>
-  <div class="home-route">{p_route}</div>
+  <div class="home-route">
+    <span>P01 → P02 → M01 → M02</span>
+    <em>入门：能构建运行项目</em>
+  </div>
 </div>
 
 <div class="home-route-block">
   <div class="home-route-title">项目路线</div>
-  <div class="home-route">{m_route}</div>
+  <div class="home-route">
+    <span>P03 → P04 → P05 → M03 → M04</span>
+    <em>核心：掌握渲染系统</em>
+  </div>
+  <div class="home-route">
+    <span>P06 → P07 → M05 → M06</span>
+    <em>音视频</em>
+  </div>
+  <div class="home-route">
+    <span>P08 → M07</span>
+    <em>脚本引擎</em>
+  </div>
+  <div class="home-route">
+    <span>M08 → M09 → P10 → P11 → M10 → M11</span>
+    <em>插件与工程化</em>
+  </div>
+  <div class="home-route">
+    <span>P09 → M12</span>
+    <em>逆向进阶</em>
+  </div>
+  <div class="home-route">
+    <span>P12 → M13</span>
+    <em>UI 替换</em>
+  </div>
 </div>
 
 ## 目标读者
@@ -386,12 +377,6 @@ features:
 - 具备 C++ 基础（语法、STL、面向对象）。
 - 没有跨平台项目、图形渲染、音视频、逆向工程经验。
 - 希望完全掌握本项目，能修 Bug、加功能、开发插件、替换 UI 框架。
-
-## 设计说明
-
-- 首页参考 README 的信息结构，但把表格入口改成了更适合首屏阅读的卡片与路线条。
-- P 系列始终在前，M 系列始终在后，导航和入口保持一致。
-- 视觉风格采用更强的留白、卡片、分层背景和中文字体栈，避免默认文档站的平铺感。
 """
 
 

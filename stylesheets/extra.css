@@ -94,7 +94,7 @@ body {
 }
 
 .VPHome .VPHero {
-    padding-top: 1.5rem;
+    padding-top: 4.5rem;
 }
 
 .VPHome .name {
@@ -103,10 +103,10 @@ body {
 }
 
 .VPHome .text {
-    max-width: 14em;
-    font-size: clamp(2rem, 5vw, 3.6rem);
+    max-width: 15.5em;
+    font-size: clamp(1.9rem, 4.3vw, 3.3rem);
     line-height: 1.08;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
 }
 
 .VPHome .tagline {
@@ -123,7 +123,7 @@ body {
 
 .home-metrics {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     margin: 1.4rem 0 2rem;
 }
@@ -266,6 +266,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.45rem;
+    line-height: 1.8;
 }
 
 .home-route span {
@@ -281,10 +282,10 @@ body {
     font-size: 0.88rem;
 }
 
-.home-route i {
-    color: var(--vp-c-text-3);
+.home-route em {
+    color: var(--vp-c-text-2);
     font-style: normal;
-    user-select: none;
+    font-size: 0.92rem;
 }
 
 @media (max-width: 960px) {
@@ -339,8 +340,13 @@ body {
         font-size: 15px;
     }
 
+    .VPHome .VPHero {
+        padding-top: 3rem;
+    }
+
     .VPHome .text {
         max-width: none;
+        font-size: clamp(1.7rem, 8vw, 2.6rem);
     }
 
     .VPHome .tagline {

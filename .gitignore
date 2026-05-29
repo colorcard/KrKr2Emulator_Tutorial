@@ -1,0 +1,5 @@
+node_modules/
+.mkdocs-src/
+.mkdocs-site/
+.vitepress/dist/
+.DS_Store
